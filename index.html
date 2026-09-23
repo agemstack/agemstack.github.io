@@ -132,6 +132,9 @@
         letter-spacing: 1.5px;
         text-transform: uppercase;
         opacity: 0.9;
+        transition:
+          color 0.3s ease,
+          opacity 0.3s ease;
       }
       nav.primary-nav a:hover {
         opacity: 1;
@@ -148,6 +151,7 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         opacity: 0.85;
+        transition: opacity 0.3s ease;
       }
       .header-actions a:hover {
         opacity: 1;
@@ -231,11 +235,22 @@
         flex-direction: column;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(27, 42, 58, 0.06);
+        transition:
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+      .offer-card:hover {
+        box-shadow: 0 16px 40px rgba(27, 42, 58, 0.12);
+        transform: translateY(-4px);
       }
       .offer-card img {
         height: 280px;
         object-fit: cover;
         width: 100%;
+        transition: transform 0.5s ease;
+      }
+      .offer-card:hover img {
+        transform: scale(1.05);
       }
       .offer-card .offer-body {
         padding: 30px;
@@ -280,6 +295,7 @@
         align-items: flex-end;
         background-size: cover;
         background-position: center;
+        transition: outline 0.3s ease;
       }
       .dest-card::after {
         content: "";
@@ -383,6 +399,7 @@
       .inclusions-note a {
         color: var(--gold-dark);
         text-decoration: underline;
+        transition: color 0.3s ease;
       }
 
       /* Highlights */
@@ -398,6 +415,13 @@
         background: var(--cream);
         padding: 30px 24px;
         border-top: 3px solid var(--gold);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .highlight-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(27, 42, 58, 0.08);
       }
       .highlight-card h3 {
         font-size: 18px;
@@ -416,6 +440,9 @@
         color: var(--gold-dark);
         border-bottom: 1px solid var(--gold-dark);
         padding-bottom: 2px;
+        transition:
+          color 0.3s ease,
+          border-color 0.3s ease;
       }
 
       /* Journal / CTA banners */
@@ -489,6 +516,7 @@
         letter-spacing: 1px;
         font-size: 13px;
         cursor: pointer;
+        transition: background 0.3s ease;
       }
       .newsletter-form button:hover {
         background: var(--gold-dark);
@@ -518,6 +546,9 @@
         margin-bottom: 10px;
         font-size: 14px;
       }
+      .footer-grid a {
+        transition: color 0.3s ease;
+      }
       .footer-grid a:hover {
         color: var(--gold);
       }
@@ -543,6 +574,7 @@
         align-items: center;
         justify-content: center;
         font-size: 14px;
+        transition: all 0.3s ease;
       }
       .socials a:hover {
         background: var(--gold);
@@ -578,7 +610,6 @@
         <a href="#" class="logo">NexCore IT</a>
         <nav class="primary-nav">
           <a href="#solutions">Solutions</a>
-          <a href="#industries">Industries</a>
           <a href="#services">Services</a>
           <a href="#ai-rag">AI &amp; RAG</a>
           <a href="#offers">Engagement Models</a>
@@ -586,7 +617,6 @@
         </nav>
         <div class="header-actions">
           <a href="#contact">Contact Us</a>
-          <a href="#account">Client Portal</a>
         </div>
         <div class="menu-toggle">&#9776;</div>
       </div>
@@ -657,81 +687,6 @@
               <a href="#" class="btn">Discover the Model</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="industries">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Industries We Serve</p>
-          <h2>Domain Expertise Across Sectors</h2>
-        </div>
-        <div class="destinations-grid">
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Banking &amp; Financial Services</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Healthcare &amp; Life Sciences</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Retail &amp; E-Commerce</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Manufacturing &amp; Supply Chain</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Logistics &amp; Transportation</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Telecom &amp; Media</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Public Sector &amp; Government</span></a
-          >
-          <a
-            class="dest-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop&quot;);
-            "
-            href="#"
-            ><span>Energy &amp; Utilities</span></a
-          >
         </div>
       </div>
     </section>
