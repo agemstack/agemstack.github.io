@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      NexCore IT Solutions | Enterprise Technology &amp; Digital Transformation
+    </title>
+    <style>
+      :root {
+        --cream: #f5f1ea;
+        --cream-dark: #ece5d8;
+        --navy: #1b2a3a;
+        --navy-light: #2c4256;
+        --gold: #b99a5b;
+        --gold-dark: #93794a;
+        --text: #2a2a28;
+        --text-muted: #6b6558;
+        --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+        --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--sans);
+        color: var(--text);
+        background: var(--cream);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--serif);
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 12px;
+        color: var(--gold-dark);
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 34px;
+        border: 1px solid var(--navy);
+        color: var(--navy);
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        background: transparent;
+      }
+      .btn:hover {
+        background: var(--navy);
+        color: var(--cream);
+      }
+
+      .btn-light {
+        border-color: var(--cream);
+        color: var(--cream);
+      }
+      .btn-light:hover {
+        background: var(--cream);
+        color: var(--navy);
+      }
+
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(6px);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 32px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .logo {
+        font-family: var(--serif);
+        color: var(--navy);
+        font-size: 22px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      nav.primary-nav {
+        display: flex;
+        gap: 36px;
+      }
+      nav.primary-nav a {
+        color: var(--navy);
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        opacity: 0.9;
+      }
+      nav.primary-nav a:hover {
+        opacity: 1;
+        color: var(--gold-dark);
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .header-actions a {
+        color: var(--navy);
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.85;
+      }
+      .header-actions a:hover {
+        opacity: 1;
+      }
+      .menu-toggle {
+        display: none;
+        color: var(--navy);
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      /* Hero */
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 640px;
+        display: flex;
+        align-items: flex-end;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(15, 23, 32, 0.25) 0%,
+            rgba(15, 23, 32, 0.75) 100%
+          ),
+          url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop")
+            center/cover no-repeat;
+        color: var(--cream);
+      }
+      .hero-content {
+        padding: 0 32px 100px;
+        max-width: 1240px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .hero-content .eyebrow {
+        color: var(--gold);
+      }
+      .hero-content h1 {
+        font-size: clamp(32px, 5vw, 56px);
+        max-width: 720px;
+        margin: 16px 0 8px;
+      }
+      .hero-content p.sub {
+        font-size: 16px;
+        margin-bottom: 28px;
+        opacity: 0.9;
+      }
+
+      /* Section shared */
+      section {
+        padding: 90px 0;
+      }
+      .section-heading {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 50px;
+      }
+      .section-heading h2 {
+        font-size: clamp(26px, 3vw, 38px);
+        margin-top: 12px;
+        color: var(--navy);
+      }
+      .section-heading p {
+        color: var(--text-muted);
+        margin-top: 14px;
+        font-size: 15px;
+      }
+
+      /* Offers */
+      .offers {
+        background: var(--cream-dark);
+      }
+      .offer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .offer-card {
+        background: var(--cream);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(27, 42, 58, 0.06);
+      }
+      .offer-card img {
+        height: 280px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .offer-card .offer-body {
+        padding: 30px;
+      }
+      .offer-card h3 {
+        color: var(--navy);
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+      .offer-card ul {
+        margin: 14px 0 22px;
+      }
+      .offer-card li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+      }
+      .offer-card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 9px;
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+
+      /* Destinations */
+      .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+      }
+      .dest-card {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+        background-position: center;
+      }
+      .dest-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(27, 42, 58, 0) 40%,
+          rgba(27, 42, 58, 0.75) 100%
+        );
+      }
+      .dest-card span {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        padding: 18px;
+        font-family: var(--serif);
+        font-size: 16px;
+      }
+      .dest-card:hover {
+        outline: 2px solid var(--gold);
+        outline-offset: -2px;
+      }
+
+      /* Life onboard */
+      .onboard {
+        background: var(--navy);
+        color: var(--cream);
+      }
+      .onboard .section-heading h2,
+      .onboard .section-heading p {
+        color: var(--cream);
+      }
+      .onboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+      .onboard-card {
+        position: relative;
+        height: 420px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: flex-end;
+      }
+      .onboard-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 30%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
+      }
+      .onboard-body {
+        position: relative;
+        z-index: 1;
+        padding: 26px;
+      }
+      .onboard-body h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+      .onboard-body p {
+        font-size: 14px;
+        opacity: 0.9;
+        margin-bottom: 16px;
+      }
+
+      /* Inclusions */
+      .inclusions {
+        background: var(--cream);
+      }
+      .inclusions-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .inclusions-list li {
+        position: relative;
+        padding-left: 26px;
+        margin-bottom: 14px;
+        font-size: 15px;
+        color: var(--text);
+      }
+      .inclusions-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--gold-dark);
+        font-weight: 700;
+      }
+      .inclusions-note {
+        margin-top: 18px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .inclusions-note a {
+        color: var(--gold-dark);
+        text-decoration: underline;
+      }
+
+      /* Highlights */
+      .highlights {
+        background: var(--cream-dark);
+      }
+      .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+      .highlight-card {
+        background: var(--cream);
+        padding: 30px 24px;
+        border-top: 3px solid var(--gold);
+      }
+      .highlight-card h3 {
+        font-size: 18px;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .highlight-card p {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+      .highlight-card a {
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--gold-dark);
+        border-bottom: 1px solid var(--gold-dark);
+        padding-bottom: 2px;
+      }
+
+      /* Journal / CTA banners */
+      .banner {
+        height: 460px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--navy);
+        position: relative;
+      }
+      .banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(245, 241, 234, 0.5);
+      }
+      .banner-content {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        padding: 0 24px;
+      }
+      .banner-content .eyebrow {
+        color: var(--gold-dark);
+      }
+      .banner-content h2 {
+        font-size: clamp(26px, 3.5vw, 40px);
+        margin: 16px 0 24px;
+        color: var(--navy);
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background: var(--navy-light);
+        color: var(--cream);
+        text-align: center;
+      }
+      .newsletter h3 {
+        font-size: 22px;
+        max-width: 520px;
+        margin: 0 auto 26px;
+      }
+      .newsletter-form {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      .newsletter-form input {
+        flex: 1;
+        padding: 14px 18px;
+        border: 1px solid rgba(245, 241, 234, 0.4);
+        background: transparent;
+        color: var(--cream);
+        font-size: 14px;
+      }
+      .newsletter-form input::placeholder {
+        color: rgba(245, 241, 234, 0.6);
+      }
+      .newsletter-form button {
+        padding: 14px 28px;
+        background: var(--gold);
+        border: none;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .newsletter-form button:hover {
+        background: var(--gold-dark);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--navy);
+        color: rgba(245, 241, 234, 0.85);
+        padding: 70px 0 30px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(245, 241, 234, 0.15);
+      }
+      .footer-grid h4 {
+        color: var(--cream);
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+      }
+      .footer-grid li {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      .footer-grid a:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 26px;
+        flex-wrap: wrap;
+        gap: 16px;
+        font-size: 13px;
+      }
+      .socials {
+        display: flex;
+        gap: 16px;
+      }
+      .socials a {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(245, 241, 234, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .socials a:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--navy);
+      }
+
+      @media (max-width: 900px) {
+        nav.primary-nav,
+        .header-actions {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .offer-grid,
+        .inclusions-inner,
+        .onboard-grid {
+          grid-template-columns: 1fr;
+        }
+        .highlights-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="#" class="logo">NexCore IT</a>
+        <nav class="primary-nav">
+          <a href="#solutions">Solutions</a>
+          <a href="#industries">Industries</a>
+          <a href="#services">Services</a>
+          <a href="#ai-rag">AI &amp; RAG</a>
+          <a href="#offers">Engagement Models</a>
+          <a href="#journal">Insights</a>
+        </nav>
+        <div class="header-actions">
+          <a href="#contact">Contact Us</a>
+          <a href="#account">Client Portal</a>
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Trusted by 200+ Brands Worldwide</p>
+        <h1>
+          We Design &amp; Build Web and Mobile Experiences That Grow Your
+          Business
+        </h1>
+        <p class="sub">
+          NexCore IT Solutions is a full-service web and mobile app development
+          studio, turning bold product ideas into fast, scalable, beautifully
+          crafted apps.
+        </p>
+        <a href="#offers" class="btn btn-light">Explore Our Services</a>
+      </div>
+    </section>
+
+    <section class="offers" id="offers">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Engagement Models</p>
+          <h2>Flexible Ways to Build With Us</h2>
+          <p>
+            Choose the delivery model that fits your product stage, budget, and
+            timeline.
+          </p>
+        </div>
+        <div class="offer-grid">
+          <div class="offer-card">
+            <img
+              src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop"
+              alt="Custom Web App Development"
+            />
+            <div class="offer-body">
+              <h3>Custom Web App Development</h3>
+              <p>
+                Responsive, high-performance websites and web apps built on
+                modern frameworks.
+              </p>
+              <ul>
+                <li>React, Next.js &amp; Vue front-ends</li>
+                <li>Node.js, Python &amp; .NET back-ends</li>
+                <li>SEO-friendly, pixel-perfect UI</li>
+              </ul>
+              <a href="#" class="btn">Discover the Model</a>
+            </div>
+          </div>
+          <div class="offer-card">
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop"
+              alt="iOS &amp; Android App Development"
+            />
+            <div class="offer-body">
+              <h3>iOS &amp; Android App Development</h3>
+              <p>
+                Native and cross-platform mobile apps designed for speed, scale,
+                and delight.
+              </p>
+              <ul>
+                <li>Swift, Kotlin, Flutter &amp; React Native</li>
+                <li>App Store &amp; Play Store launch support</li>
+                <li>Ongoing releases &amp; app maintenance</li>
+              </ul>
+              <a href="#" class="btn">Discover the Model</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Industries We Serve</p>
+          <h2>Domain Expertise Across Sectors</h2>
+        </div>
+        <div class="destinations-grid">
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Banking &amp; Financial Services</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Healthcare &amp; Life Sciences</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Retail &amp; E-Commerce</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Manufacturing &amp; Supply Chain</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Logistics &amp; Transportation</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Telecom &amp; Media</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Public Sector &amp; Government</span></a
+          >
+          <a
+            class="dest-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+            href="#"
+            ><span>Energy &amp; Utilities</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="onboard" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Core Services</p>
+          <h2>Everything You Need to Ship a Great Product</h2>
+        </div>
+        <div class="onboard-grid">
+          <div
+            class="onboard-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          >
+            <div class="onboard-body">
+              <h3>Web Development</h3>
+              <p>
+                Marketing sites, web portals, and SaaS platforms built for speed
+                and scale.
+              </p>
+              <a href="#" class="btn btn-light">Explore Web Development</a>
+            </div>
+          </div>
+          <div
+            class="onboard-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          >
+            <div class="onboard-body">
+              <h3>Mobile App Development</h3>
+              <p>
+                Native iOS &amp; Android and cross-platform apps loved by
+                millions of users.
+              </p>
+              <a href="#" class="btn btn-light">Explore Mobile Development</a>
+            </div>
+          </div>
+          <div
+            class="onboard-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1581276879432-15e50529f34b?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          >
+            <div class="onboard-body">
+              <h3>UI/UX Design</h3>
+              <p>
+                Research-driven product design that turns complex flows into
+                intuitive interfaces.
+              </p>
+              <a href="#" class="btn btn-light">Explore Design</a>
+            </div>
+          </div>
+          <div
+            class="onboard-card"
+            style="
+              background-image: url(&quot;https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop&quot;);
+            "
+          >
+            <div class="onboard-body">
+              <h3>AI &amp; RAG Solutions</h3>
+              <p>
+                Retrieval-Augmented Generation, LLM integrations, and advanced
+                AI agents embedded directly into your web &amp; mobile apps.
+              </p>
+              <a href="#" class="btn btn-light">Explore AI Solutions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights" id="ai-rag">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Advanced AI</p>
+          <h2>AI &amp; RAG Capabilities Built Into Every Product</h2>
+          <p>
+            We go beyond chatbots — grounding large language models in your own
+            data so every answer is accurate, current, and explainable.
+          </p>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <h3>Retrieval-Augmented Generation</h3>
+            <p>
+              Custom RAG pipelines that ground LLM responses in your private
+              documents, databases, and APIs for accurate, hallucination-free
+              answers.
+            </p>
+            <a href="#">Learn About RAG</a>
+          </div>
+          <div class="highlight-card">
+            <h3>Vector Search &amp; Embeddings</h3>
+            <p>
+              Production-grade semantic search with Pinecone, Weaviate,
+              pgvector, and Azure AI Search tuned for low-latency retrieval.
+            </p>
+            <a href="#">Learn About Vector Search</a>
+          </div>
+          <div class="highlight-card">
+            <h3>LLM Orchestration &amp; Agents</h3>
+            <p>
+              Multi-step AI agents built with LangChain, LlamaIndex, and Azure
+              OpenAI that automate workflows across your web &amp; mobile apps.
+            </p>
+            <a href="#">Learn About AI Agents</a>
+          </div>
+          <div class="highlight-card">
+            <h3>Fine-Tuning &amp; Model Ops</h3>
+            <p>
+              Domain-tuned models, evaluation pipelines, and guardrails so your
+              AI features stay accurate, safe, and cost-efficient at scale.
+            </p>
+            <a href="#">Learn About Model Ops</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="inclusions">
+      <div class="container">
+        <div class="inclusions-inner">
+          <div>
+            <p class="eyebrow">Why Choose NexCore</p>
+            <h2
+              style="margin: 14px 0 26px; color: var(--navy); font-size: 30px"
+            >
+              Every Web &amp; Mobile Project Includes
+            </h2>
+            <ul class="inclusions-list">
+              <li>Dedicated product designer and delivery manager</li>
+              <li>Responsive design across web, iOS &amp; Android</li>
+              <li>App Store &amp; Play Store submission handled for you</li>
+              <li>Agile delivery with weekly sprint demos</li>
+              <li>Source code and IP fully owned by you</li>
+              <li>Performance, accessibility &amp; SEO optimization</li>
+              <li>Transparent, milestone-based reporting</li>
+              <li>Post-launch support &amp; app maintenance plans</li>
+              <li>Optional AI &amp; RAG features grounded in your own data</li>
+            </ul>
+            <p class="inclusions-note">
+              Plus <a href="#">ongoing maintenance retainers</a> to keep your
+              web and mobile apps running smoothly.
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop"
+              alt="Designers reviewing app mockups"
+              style="border-radius: 2px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Case Studies</p>
+          <h2>Real Products We've Shipped</h2>
+        </div>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <h3>60% Faster Checkout</h3>
+            <p>
+              Rebuilt a retail web app's checkout flow with a modern front-end
+              stack, cutting load time by more than half.
+            </p>
+            <a href="#">Read Case Study</a>
+          </div>
+          <div class="highlight-card">
+            <h3>500K+ App Downloads</h3>
+            <p>
+              Designed and launched a cross-platform mobile app that hit half a
+              million downloads in its first year.
+            </p>
+            <a href="#">Read Case Study</a>
+          </div>
+          <div class="highlight-card">
+            <h3>4.8-Star App Store Rating</h3>
+            <p>
+              Redesigned a clunky booking app into an intuitive native iOS &amp;
+              Android experience.
+            </p>
+            <a href="#">Read Case Study</a>
+          </div>
+          <div class="highlight-card">
+            <h3>AI-Powered Knowledge Assistant</h3>
+            <p>
+              Shipped a RAG-based support assistant that cut resolution time by
+              45% by grounding answers in a client's live knowledge base.
+            </p>
+            <a href="#">Read Case Study</a>
+          </div>
+          <div class="highlight-card">
+            <h3>99.99% Uptime SLA</h3>
+            <p>
+              Modernized a healthcare provider's web portal with zero unplanned
+              downtime in 18 months.
+            </p>
+            <a href="#">Read Case Study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="banner"
+      id="journal"
+      style="
+        background-image: url(&quot;https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop&quot;);
+      "
+    >
+      <div class="banner-content">
+        <p class="eyebrow">Insights &amp; Research by NexCore IT</p>
+        <h2>The NexCore Tech Journal</h2>
+        <a href="#" class="btn">Read Our Insights</a>
+      </div>
+    </div>
+
+    <div
+      class="banner"
+      style="
+        background-image: url(&quot;https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop&quot;);
+      "
+    >
+      <div class="banner-content">
+        <p class="eyebrow">Ready to Build?</p>
+        <h2>Let's Turn Your Idea Into a Web or Mobile App</h2>
+        <a href="#" class="btn">Schedule a Consultation</a>
+      </div>
+    </div>
+
+    <section class="newsletter">
+      <div class="container">
+        <h3>
+          Stay informed — subscribe for the latest web &amp; mobile development
+          insights
+        </h3>
+        <form class="newsletter-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter your work email..." required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">Talk to a Solutions Architect</a></li>
+              <li><a href="tel:+14155550178">+1 415 555 0178</a></li>
+              <li><a href="#">Support Portal</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Mobile App Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Get Started</h4>
+            <ul>
+              <li><a href="#">Request a Proposal</a></li>
+              <li><a href="#">Engagement Models</a></li>
+              <li><a href="#">Download Capability Deck</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">Why NexCore IT</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Legal Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; NexCore IT Solutions 2026</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="X">x</a>
+            <a href="#" aria-label="GitHub">gh</a>
+            <a href="#" aria-label="YouTube">y</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
