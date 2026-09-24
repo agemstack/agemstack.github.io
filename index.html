@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      NexCore IT Solutions | Enterprise Technology &amp; Digital Transformation
+      Agemstack IT Solutions | Enterprise Technology &amp; Digital
+      Transformation
     </title>
     <style>
       :root {
@@ -28,6 +29,7 @@
 
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 110px;
       }
 
       body {
@@ -104,10 +106,11 @@
         left: 0;
         right: 0;
         z-index: 100;
-        background: rgba(255, 255, 255, 0.95);
+        background: rgb(255 239 215);
         backdrop-filter: blur(6px);
       }
       .header-inner {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -116,29 +119,56 @@
         margin: 0 auto;
       }
       .logo {
-        font-family: var(--serif);
-        color: var(--navy);
-        font-size: 22px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        height: 88px;
+        z-index: 2;
+      }
+      .logo img,
+      .logo svg {
+        width: 88px;
+        height: 88px;
+        object-fit: contain;
       }
       nav.primary-nav {
         display: flex;
         gap: 36px;
+        margin-left: 180px;
       }
       nav.primary-nav a {
+        position: relative;
         color: var(--navy);
         font-size: 13px;
         letter-spacing: 1.5px;
         text-transform: uppercase;
         opacity: 0.9;
+        padding-bottom: 6px;
         transition:
           color 0.3s ease,
           opacity 0.3s ease;
       }
+      nav.primary-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gold-dark);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
       nav.primary-nav a:hover {
         opacity: 1;
         color: var(--gold-dark);
+      }
+      nav.primary-nav a:hover::after {
+        transform: scaleX(1);
       }
       .header-actions {
         display: flex;
@@ -146,15 +176,35 @@
         gap: 20px;
       }
       .header-actions a {
+        position: relative;
         color: var(--navy);
         font-size: 12px;
         letter-spacing: 1px;
         text-transform: uppercase;
         opacity: 0.85;
-        transition: opacity 0.3s ease;
+        padding-bottom: 6px;
+        transition:
+          color 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .header-actions a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gold-dark);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
       }
       .header-actions a:hover {
         opacity: 1;
+        color: var(--gold-dark);
+      }
+      .header-actions a:hover::after {
+        transform: scaleX(1);
       }
       .menu-toggle {
         display: none;
@@ -176,7 +226,7 @@
             rgba(15, 23, 32, 0.25) 0%,
             rgba(15, 23, 32, 0.75) 100%
           ),
-          url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop")
+          url("https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1920&auto=format&fit=crop")
             center/cover no-repeat;
         color: var(--cream);
       }
@@ -348,8 +398,9 @@
         inset: 0;
         background: linear-gradient(
           180deg,
-          rgba(0, 0, 0, 0) 30%,
-          rgba(0, 0, 0, 0.7) 100%
+          rgba(245, 241, 234, 0) 0%,
+          rgba(245, 241, 234, 0) 70%,
+          rgba(245, 241, 234, 0.92) 100%
         );
       }
       .onboard-body {
@@ -360,11 +411,15 @@
       .onboard-body h3 {
         font-size: 22px;
         margin-bottom: 8px;
+        color: var(--white);
+        text-shadow: none;
       }
       .onboard-body p {
         font-size: 14px;
-        opacity: 0.9;
+        color: var(--white);
+        opacity: 0.95;
         margin-bottom: 16px;
+        text-shadow: none;
       }
 
       /* Inclusions */
@@ -532,6 +587,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+        align-items: start;
         padding-bottom: 40px;
         border-bottom: 1px solid rgba(245, 241, 234, 0.15);
       }
@@ -607,12 +663,13 @@
   <body>
     <header>
       <div class="header-inner">
-        <a href="#" class="logo">NexCore IT</a>
+        <a href="#" class="logo"
+          ><img src="logo-agemstack.PNG" alt="Agemstack logo"
+        /></a>
         <nav class="primary-nav">
-          <a href="#solutions">Solutions</a>
           <a href="#services">Services</a>
           <a href="#ai-rag">AI &amp; RAG</a>
-          <a href="#offers">Engagement Models</a>
+          <a href="#offers">Solutions</a>
           <a href="#journal">Insights</a>
         </nav>
         <div class="header-actions">
@@ -630,9 +687,9 @@
           Business
         </h1>
         <p class="sub">
-          NexCore IT Solutions is a full-service web and mobile app development
-          studio, turning bold product ideas into fast, scalable, beautifully
-          crafted apps.
+          Agemstack IT Solutions is a full-service web and mobile app
+          development studio, turning bold product ideas into fast, scalable,
+          beautifully crafted apps.
         </p>
         <a href="#offers" class="btn btn-light">Explore Our Services</a>
       </div>
@@ -651,7 +708,7 @@
         <div class="offer-grid">
           <div class="offer-card">
             <img
-              src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop"
               alt="Custom Web App Development"
             />
             <div class="offer-body">
@@ -665,12 +722,11 @@
                 <li>Node.js, Python &amp; .NET back-ends</li>
                 <li>SEO-friendly, pixel-perfect UI</li>
               </ul>
-              <a href="#" class="btn">Discover the Model</a>
             </div>
           </div>
           <div class="offer-card">
             <img
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop"
               alt="iOS &amp; Android App Development"
             />
             <div class="offer-body">
@@ -684,7 +740,6 @@
                 <li>App Store &amp; Play Store launch support</li>
                 <li>Ongoing releases &amp; app maintenance</li>
               </ul>
-              <a href="#" class="btn">Discover the Model</a>
             </div>
           </div>
         </div>
@@ -701,7 +756,7 @@
           <div
             class="onboard-card"
             style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800&auto=format&fit=crop&quot;);
+              background-image: url(&quot;https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop&quot;);
             "
           >
             <div class="onboard-body">
@@ -710,7 +765,9 @@
                 Marketing sites, web portals, and SaaS platforms built for speed
                 and scale.
               </p>
-              <a href="#" class="btn btn-light">Explore Web Development</a>
+              <a href="#" class="btn btn-light" style="display: none"
+                >Explore Web Development</a
+              >
             </div>
           </div>
           <div
@@ -725,13 +782,15 @@
                 Native iOS &amp; Android and cross-platform apps loved by
                 millions of users.
               </p>
-              <a href="#" class="btn btn-light">Explore Mobile Development</a>
+              <a href="#" class="btn btn-light" style="display: none"
+                >Explore Mobile Development</a
+              >
             </div>
           </div>
           <div
             class="onboard-card"
             style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1581276879432-15e50529f34b?q=80&w=800&auto=format&fit=crop&quot;);
+              background-image: url(&quot;https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=800&auto=format&fit=crop&quot;);
             "
           >
             <div class="onboard-body">
@@ -740,13 +799,15 @@
                 Research-driven product design that turns complex flows into
                 intuitive interfaces.
               </p>
-              <a href="#" class="btn btn-light">Explore Design</a>
+              <a href="#" class="btn btn-light" style="display: none"
+                >Explore Design</a
+              >
             </div>
           </div>
           <div
             class="onboard-card"
             style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop&quot;);
+              background-image: url(&quot;https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=800&auto=format&fit=crop&quot;);
             "
           >
             <div class="onboard-body">
@@ -755,7 +816,9 @@
                 Retrieval-Augmented Generation, LLM integrations, and advanced
                 AI agents embedded directly into your web &amp; mobile apps.
               </p>
-              <a href="#" class="btn btn-light">Explore AI Solutions</a>
+              <a href="#" class="btn btn-light" style="display: none"
+                >Explore AI Solutions</a
+              >
             </div>
           </div>
         </div>
@@ -780,7 +843,6 @@
               documents, databases, and APIs for accurate, hallucination-free
               answers.
             </p>
-            <a href="#">Learn About RAG</a>
           </div>
           <div class="highlight-card">
             <h3>Vector Search &amp; Embeddings</h3>
@@ -788,7 +850,6 @@
               Production-grade semantic search with Pinecone, Weaviate,
               pgvector, and Azure AI Search tuned for low-latency retrieval.
             </p>
-            <a href="#">Learn About Vector Search</a>
           </div>
           <div class="highlight-card">
             <h3>LLM Orchestration &amp; Agents</h3>
@@ -796,7 +857,6 @@
               Multi-step AI agents built with LangChain, LlamaIndex, and Azure
               OpenAI that automate workflows across your web &amp; mobile apps.
             </p>
-            <a href="#">Learn About AI Agents</a>
           </div>
           <div class="highlight-card">
             <h3>Fine-Tuning &amp; Model Ops</h3>
@@ -804,7 +864,6 @@
               Domain-tuned models, evaluation pipelines, and guardrails so your
               AI features stay accurate, safe, and cost-efficient at scale.
             </p>
-            <a href="#">Learn About Model Ops</a>
           </div>
         </div>
       </div>
@@ -838,8 +897,8 @@
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1000&auto=format&fit=crop"
-              alt="Designers reviewing app mockups"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
+              alt="Engineers reviewing code together"
               style="border-radius: 2px"
             />
           </div>
@@ -860,7 +919,7 @@
               Rebuilt a retail web app's checkout flow with a modern front-end
               stack, cutting load time by more than half.
             </p>
-            <a href="#">Read Case Study</a>
+            <a href="#" style="display: none">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>500K+ App Downloads</h3>
@@ -868,7 +927,7 @@
               Designed and launched a cross-platform mobile app that hit half a
               million downloads in its first year.
             </p>
-            <a href="#">Read Case Study</a>
+            <a href="#" style="display: none">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>4.8-Star App Store Rating</h3>
@@ -876,7 +935,7 @@
               Redesigned a clunky booking app into an intuitive native iOS &amp;
               Android experience.
             </p>
-            <a href="#">Read Case Study</a>
+            <a href="#" style="display: none">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>AI-Powered Knowledge Assistant</h3>
@@ -884,7 +943,7 @@
               Shipped a RAG-based support assistant that cut resolution time by
               45% by grounding answers in a client's live knowledge base.
             </p>
-            <a href="#">Read Case Study</a>
+            <a href="#" style="display: none">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>99.99% Uptime SLA</h3>
@@ -892,7 +951,7 @@
               Modernized a healthcare provider's web portal with zero unplanned
               downtime in 18 months.
             </p>
-            <a href="#">Read Case Study</a>
+            <a href="#" style="display: none">Read Case Study</a>
           </div>
         </div>
       </div>
@@ -902,12 +961,12 @@
       class="banner"
       id="journal"
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop&quot;);
+        background-image: url(&quot;https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1600&auto=format&fit=crop&quot;);
       "
     >
       <div class="banner-content">
-        <p class="eyebrow">Insights &amp; Research by NexCore IT</p>
-        <h2>The NexCore Tech Journal</h2>
+        <p class="eyebrow">Insights &amp; Research by Agemstack IT</p>
+        <h2>The Agemstack Tech Journal</h2>
         <a href="#" class="btn">Read Our Insights</a>
       </div>
     </div>
@@ -915,7 +974,7 @@
     <div
       class="banner"
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=1600&auto=format&fit=crop&quot;);
+        background-image: url(&quot;https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop&quot;);
       "
     >
       <div class="banner-content">
@@ -931,10 +990,7 @@
           Stay informed — subscribe for the latest web &amp; mobile development
           insights
         </h3>
-        <form class="newsletter-form" onsubmit="return false;">
-          <input type="email" placeholder="Enter your work email..." required />
-          <button type="submit">Subscribe</button>
-        </form>
+        <div>agemstack@gmail.com</div>
       </div>
     </section>
 
@@ -942,12 +998,7 @@
       <div class="container">
         <div class="footer-grid">
           <div>
-            <h4>Contact Us</h4>
-            <ul>
-              <li><a href="#">Talk to a Solutions Architect</a></li>
-              <li><a href="tel:+14155550178">+1 415 555 0178</a></li>
-              <li><a href="#">Support Portal</a></li>
-            </ul>
+            <p>&copy; Agemstack IT Solutions 2026</p>
           </div>
           <div>
             <h4>Solutions</h4>
@@ -958,29 +1009,19 @@
             </ul>
           </div>
           <div>
-            <h4>Get Started</h4>
+            <h4>Contact Us</h4>
             <ul>
-              <li><a href="#">Request a Proposal</a></li>
-              <li><a href="#">Engagement Models</a></li>
-              <li><a href="#">Download Capability Deck</a></li>
+              <li><a href="#">Reach out to an IT Solutions</a></li>
+              <li><a href="tel:+14155550178">+1 415 555 0178</a></li>
             </ul>
           </div>
           <div>
-            <h4>Company</h4>
-            <ul>
-              <li><a href="#">Why NexCore IT</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Legal Terms &amp; Conditions</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; NexCore IT Solutions 2026</p>
-          <div class="socials">
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="X">x</a>
-            <a href="#" aria-label="GitHub">gh</a>
-            <a href="#" aria-label="YouTube">y</a>
+            <div class="socials">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="#" aria-label="X">x</a>
+              <a href="#" aria-label="GitHub">gh</a>
+              <a href="#" aria-label="YouTube">y</a>
+            </div>
           </div>
         </div>
       </div>
