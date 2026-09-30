@@ -9,6 +9,16 @@
       content="Agemstack IT Solutions builds custom web apps, iOS &amp; Android mobile apps, and AI/RAG-powered products for fast-growing businesses."
     />
     <link rel="canonical" href="https://agemstack.github.io/" />
+    <link rel="icon" type="image/png" href="./images/logo-agemstack.PNG" />
+    <link rel="apple-touch-icon" href="./images/logo-agemstack.PNG" />
+    <link rel="alternate" hreflang="en" href="https://agemstack.github.io/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://agemstack.github.io/"
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -270,6 +280,12 @@
         color: var(--navy);
         font-size: 22px;
         cursor: pointer;
+        background: transparent;
+        border: none;
+        width: 44px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Hero */
@@ -732,7 +748,27 @@
           display: none;
         }
         .menu-toggle {
-          display: block;
+          display: flex;
+        }
+        body.nav-open .header-inner {
+          flex-wrap: wrap;
+        }
+        body.nav-open nav.primary-nav,
+        body.nav-open .header-actions {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-left: 0;
+          gap: 0;
+          padding-top: 12px;
+        }
+        body.nav-open nav.primary-nav a,
+        body.nav-open .header-actions a {
+          width: 100%;
+          padding: 14px 4px;
+          min-height: 44px;
+          font-size: 15px;
+          border-bottom: 1px solid rgba(27, 42, 58, 0.08);
         }
         .offer-grid,
         .inclusions-inner,
@@ -752,9 +788,14 @@
     <header>
       <div class="header-inner">
         <a href="#" class="logo"
-          ><img src="./images/logo-agemstack.PNG" alt="Agemstack logo"
+          ><img
+            src="./images/logo-agemstack.PNG"
+            alt="Agemstack logo"
+            width="88"
+            height="88"
+            decoding="async"
         /></a>
-        <nav class="primary-nav">
+        <nav class="primary-nav" id="primary-nav">
           <a href="#services">Services</a>
           <a href="#ai-rag">AI &amp; RAG</a>
           <a href="#offers">Solutions</a>
@@ -763,17 +804,22 @@
         <div class="header-actions">
           <a href="#contact">Contact Us</a>
         </div>
-        <div class="menu-toggle">&#9776;</div>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          &#9776;
+        </button>
       </div>
     </header>
 
     <section class="hero" id="home">
       <div class="hero-content">
         <p class="eyebrow">Trusted by 200+ Brands Worldwide</p>
-        <h1>
-          We Design &amp; Build Web and Mobile Experiences That Grow Your
-          Business
-        </h1>
+        <h1>We Build Web &amp; Mobile Apps That Grow Your Business</h1>
         <p class="sub">
           Agemstack IT Solutions is a full-service web and mobile app
           development studio, turning bold product ideas into fast, scalable,
@@ -798,6 +844,10 @@
             <img
               src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop"
               alt="Custom Web App Development"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
             />
             <div class="offer-body">
               <h3>Custom Web App Development</h3>
@@ -816,6 +866,10 @@
             <img
               src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop"
               alt="iOS &amp; Android App Development"
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
             />
             <div class="offer-body">
               <h3>iOS &amp; Android App Development</h3>
@@ -841,9 +895,7 @@
           <h2>Everything You Need to Ship a Great Product</h2>
         </div>
         <div class="onboard-grid">
-          <div
-            class="onboard-card onboard-card--web"
-          >
+          <div class="onboard-card onboard-card--web">
             <div class="onboard-body">
               <h3>Web Development</h3>
               <p>
@@ -855,9 +907,7 @@
               >
             </div>
           </div>
-          <div
-            class="onboard-card onboard-card--mobile"
-          >
+          <div class="onboard-card onboard-card--mobile">
             <div class="onboard-body">
               <h3>Mobile App Development</h3>
               <p>
@@ -869,23 +919,17 @@
               >
             </div>
           </div>
-          <div
-            class="onboard-card onboard-card--design"
-          >
+          <div class="onboard-card onboard-card--design">
             <div class="onboard-body">
               <h3>UI/UX Design</h3>
               <p>
                 Research-driven product design that turns complex flows into
                 intuitive interfaces.
               </p>
-              <a href="#" class="btn btn-light is-hidden"
-                >Explore Design</a
-              >
+              <a href="#" class="btn btn-light is-hidden">Explore Design</a>
             </div>
           </div>
-          <div
-            class="onboard-card onboard-card--ai"
-          >
+          <div class="onboard-card onboard-card--ai">
             <div class="onboard-body">
               <h3>AI &amp; RAG Solutions</h3>
               <p>
@@ -974,6 +1018,10 @@
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
               alt="Engineers reviewing code together"
               class="inclusions-img"
+              width="1000"
+              height="750"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -1031,10 +1079,7 @@
       </div>
     </section>
 
-    <div
-      class="banner banner--journal"
-      id="journal"
-    >
+    <div class="banner banner--journal" id="journal">
       <div class="banner-content">
         <p class="eyebrow">Insights &amp; Research by Agemstack IT</p>
         <h2>The Agemstack Tech Journal</h2>
@@ -1042,9 +1087,7 @@
       </div>
     </div>
 
-    <div
-      class="banner banner--cta"
-    >
+    <div class="banner banner--cta">
       <div class="banner-content">
         <p class="eyebrow">Ready to Build?</p>
         <h2>Let's Turn Your Idea Into a Web or Mobile App</h2>
@@ -1130,6 +1173,15 @@
         el.href = "mailto:" + email;
         el.textContent = email;
       });
+
+      // Toggle mobile navigation menu
+      var menuToggle = document.querySelector(".menu-toggle");
+      if (menuToggle) {
+        menuToggle.addEventListener("click", function () {
+          var isOpen = document.body.classList.toggle("nav-open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
     </script>
   </body>
 </html>
