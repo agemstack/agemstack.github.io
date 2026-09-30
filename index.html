@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Agemstack IT Solutions | Web, Mobile &amp; AI App Development
-    </title>
+    <title>Agemstack IT Solutions | Web, Mobile &amp; AI App Development</title>
     <meta
       name="description"
       content="Agemstack IT Solutions builds custom web apps, iOS &amp; Android mobile apps, and AI/RAG-powered products for fast-growing businesses."
@@ -423,6 +421,18 @@
         display: flex;
         align-items: flex-end;
       }
+      .onboard-card--web {
+        background-image: url("https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop");
+      }
+      .onboard-card--mobile {
+        background-image: url("https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop");
+      }
+      .onboard-card--design {
+        background-image: url("https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=800&auto=format&fit=crop");
+      }
+      .onboard-card--ai {
+        background-image: url("https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=800&auto=format&fit=crop");
+      }
       .onboard-card::after {
         content: "";
         position: absolute;
@@ -486,6 +496,14 @@
         color: var(--gold-dark);
         text-decoration: underline;
         transition: color 0.3s ease;
+      }
+      .inclusions-heading {
+        margin: 14px 0 26px;
+        color: var(--navy);
+        font-size: 30px;
+      }
+      .inclusions-img {
+        border-radius: 2px;
       }
 
       /* Highlights */
@@ -562,6 +580,15 @@
         font-size: clamp(26px, 3.5vw, 40px);
         margin: 16px 0 24px;
         color: var(--navy);
+      }
+      .banner--journal {
+        background-image: url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1600&auto=format&fit=crop");
+      }
+      .banner--cta {
+        background-image: url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop");
+      }
+      .is-hidden {
+        display: none;
       }
 
       /* Newsletter */
@@ -785,10 +812,7 @@
         </div>
         <div class="onboard-grid">
           <div
-            class="onboard-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop&quot;);
-            "
+            class="onboard-card onboard-card--web"
           >
             <div class="onboard-body">
               <h3>Web Development</h3>
@@ -796,16 +820,13 @@
                 Marketing sites, web portals, and SaaS platforms built for speed
                 and scale.
               </p>
-              <a href="#" class="btn btn-light" style="display: none"
+              <a href="#" class="btn btn-light is-hidden"
                 >Explore Web Development</a
               >
             </div>
           </div>
           <div
-            class="onboard-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=800&auto=format&fit=crop&quot;);
-            "
+            class="onboard-card onboard-card--mobile"
           >
             <div class="onboard-body">
               <h3>Mobile App Development</h3>
@@ -813,16 +834,13 @@
                 Native iOS &amp; Android and cross-platform apps loved by
                 millions of users.
               </p>
-              <a href="#" class="btn btn-light" style="display: none"
+              <a href="#" class="btn btn-light is-hidden"
                 >Explore Mobile Development</a
               >
             </div>
           </div>
           <div
-            class="onboard-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?q=80&w=800&auto=format&fit=crop&quot;);
-            "
+            class="onboard-card onboard-card--design"
           >
             <div class="onboard-body">
               <h3>UI/UX Design</h3>
@@ -830,16 +848,13 @@
                 Research-driven product design that turns complex flows into
                 intuitive interfaces.
               </p>
-              <a href="#" class="btn btn-light" style="display: none"
+              <a href="#" class="btn btn-light is-hidden"
                 >Explore Design</a
               >
             </div>
           </div>
           <div
-            class="onboard-card"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=800&auto=format&fit=crop&quot;);
-            "
+            class="onboard-card onboard-card--ai"
           >
             <div class="onboard-body">
               <h3>AI &amp; RAG Solutions</h3>
@@ -847,7 +862,7 @@
                 Retrieval-Augmented Generation, LLM integrations, and advanced
                 AI agents embedded directly into your web &amp; mobile apps.
               </p>
-              <a href="#" class="btn btn-light" style="display: none"
+              <a href="#" class="btn btn-light is-hidden"
                 >Explore AI Solutions</a
               >
             </div>
@@ -905,9 +920,7 @@
         <div class="inclusions-inner">
           <div>
             <p class="eyebrow">Why Choose NexCore</p>
-            <h2
-              style="margin: 14px 0 26px; color: var(--navy); font-size: 30px"
-            >
+            <h2 class="inclusions-heading">
               Every Web &amp; Mobile Project Includes
             </h2>
             <ul class="inclusions-list">
@@ -930,7 +943,7 @@
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop"
               alt="Engineers reviewing code together"
-              style="border-radius: 2px"
+              class="inclusions-img"
             />
           </div>
         </div>
@@ -950,7 +963,7 @@
               Rebuilt a retail web app's checkout flow with a modern front-end
               stack, cutting load time by more than half.
             </p>
-            <a href="#" style="display: none">Read Case Study</a>
+            <a href="#" class="is-hidden">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>500K+ App Downloads</h3>
@@ -958,7 +971,7 @@
               Designed and launched a cross-platform mobile app that hit half a
               million downloads in its first year.
             </p>
-            <a href="#" style="display: none">Read Case Study</a>
+            <a href="#" class="is-hidden">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>4.8-Star App Store Rating</h3>
@@ -966,7 +979,7 @@
               Redesigned a clunky booking app into an intuitive native iOS &amp;
               Android experience.
             </p>
-            <a href="#" style="display: none">Read Case Study</a>
+            <a href="#" class="is-hidden">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>AI-Powered Knowledge Assistant</h3>
@@ -974,7 +987,7 @@
               Shipped a RAG-based support assistant that cut resolution time by
               45% by grounding answers in a client's live knowledge base.
             </p>
-            <a href="#" style="display: none">Read Case Study</a>
+            <a href="#" class="is-hidden">Read Case Study</a>
           </div>
           <div class="highlight-card">
             <h3>99.99% Uptime SLA</h3>
@@ -982,18 +995,15 @@
               Modernized a healthcare provider's web portal with zero unplanned
               downtime in 18 months.
             </p>
-            <a href="#" style="display: none">Read Case Study</a>
+            <a href="#" class="is-hidden">Read Case Study</a>
           </div>
         </div>
       </div>
     </section>
 
     <div
-      class="banner"
+      class="banner banner--journal"
       id="journal"
-      style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1600&auto=format&fit=crop&quot;);
-      "
     >
       <div class="banner-content">
         <p class="eyebrow">Insights &amp; Research by Agemstack IT</p>
@@ -1003,10 +1013,7 @@
     </div>
 
     <div
-      class="banner"
-      style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1600&auto=format&fit=crop&quot;);
-      "
+      class="banner banner--cta"
     >
       <div class="banner-content">
         <p class="eyebrow">Ready to Build?</p>
@@ -1021,7 +1028,14 @@
           Stay informed — subscribe for the latest web &amp; mobile development
           insights
         </h3>
-        <div>agemstack@gmail.com</div>
+        <a
+          href="#"
+          class="email-link"
+          data-user="kcatsmega"
+          data-domain="moc.liamg"
+          aria-label="Email us"
+          >[javascript protected email]</a
+        >
       </div>
     </section>
 
@@ -1042,18 +1056,50 @@
           <div>
             <h4>Contact Us</h4>
             <ul>
-              <li><a href="#">agemstack@gmail.com</a></li>
+              <li>
+                <a
+                  href="#"
+                  class="email-link"
+                  data-user="kcatsmega"
+                  data-domain="moc.liamg"
+                  aria-label="Email us"
+                  >[javascript protected email]</a
+                >
+              </li>
               <li><a href="tel:+919150796701">+91 91507 596701</a></li>
             </ul>
           </div>
           <div>
             <div class="socials">
-              <a href="https://www.linkedin.com/in/agemstack-solutions-b172a143a" aria-label="LinkedIn">in</a>
-              <a href="https://x.com/agemstack" aria-label="X">X</a>
+              <a
+                href="https://www.linkedin.com/in/agemstack-solutions-b172a143a"
+                aria-label="LinkedIn"
+                rel="me noopener noreferrer"
+                target="_blank"
+                >in</a
+              >
+              <a
+                href="https://x.com/agemstack"
+                aria-label="X"
+                rel="me noopener noreferrer"
+                target="_blank"
+                >X</a
+              >
             </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <script>
+      // Reconstruct email addresses at runtime so plain text isn't exposed in the page source
+      document.querySelectorAll(".email-link").forEach(function (el) {
+        var user = el.dataset.user.split("").reverse().join("");
+        var domain = el.dataset.domain.split("").reverse().join("");
+        var email = user + "@" + domain;
+        el.href = "mailto:" + email;
+        el.textContent = email;
+      });
+    </script>
   </body>
 </html>
